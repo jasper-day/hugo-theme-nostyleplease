@@ -29,7 +29,8 @@
     ordered = false
 
 [params]
+  favicon = "ico/favicon.ico"
   [params.theme_config]
-    appearance = "auto"
-    back_home_text = ".."
+    appearance = "light"
+    back_home_text = "↫"
     date_format = "2006-01-02"
