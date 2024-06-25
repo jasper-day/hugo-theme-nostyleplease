@@ -19,4 +19,10 @@
   {{ $style := $sass | resources.ToCSS $options | resources.Fingerprint "sha512" }}
   <link rel="stylesheet" href="{{ $style.Permalink | relURL }}" integrity="{{ $style.Data.Integrity }}" />
   {{ if .Params.mathjax }} {{ partial "mathjax.html" . }} {{ end }}
+  <!-- Include scripts from the front matter -->
+  {{- with .Params.script -}}
+  {{- range . -}}
+      <script src="{{ . }}"></script>
+  {{- end -}}
+  {{- end -}}
 </head>
